@@ -1,0 +1,272 @@
+ @import url('https://fonts.googleapis.com/css2?family=Phudu&family=Roboto&family=Rubik&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+:root {
+  --logo-color: #4478e4;
+  --font-color: #0A0A0A;
+  --light-grey: #898c9d;
+  --bg-color: #eceff5;
+  --off-white: #f9fafd;
+  --box-color: #ffffff;
+  --logo-font: 'Phudu', cursive;
+  --todo-list-font: 'Rubik', sans-serif;
+  --header-font: 'Roboto', sans-serif;
+}
+
+.containerOfTodoPage{
+    background-color: var(--bg-color);
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: .7fr 3fr;
+    grid-template-areas: 
+    "sidebar content";
+    min-height: 100vh;
+}
+
+.headerOfTodoPage{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 2rem;
+    height: 8rem;
+    background-color: var(--bg-color);
+}
+/* Logo Section */
+.logoSection{
+    font-size: 2rem;
+    font-family: var(--logo-font);
+    color: var(--logo-color);
+    font-weight: 500;
+    margin-left: 2rem;
+}
+/* Search Section */
+.searchSection{
+    display: flex;
+
+}
+.userInput{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    border-radius: 1rem 0 0 1rem;
+    padding: 1rem 1rem 1rem 2rem;
+    width: 50%;
+    background-color: #E5E9F1;
+}
+.userInput[type="checkbox"]{
+    margin: 0px 2rem;
+    width: 80%;
+   border-radius: 10rem;
+}
+.addTaskBtn{
+     background: var(--off-white);
+     border: none;
+     font-size: 1rem;
+     font-family: var(--header-font);
+     font-weight: 600;
+     padding: 1rem;
+     border-radius: 0 1rem 1rem 0;
+     color: var(--light-grey);
+}
+.userSection{
+    display: flex;
+    justify-content: flex-end;
+    /* border: 2px solid; */
+}
+.userInfo{
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 0 1rem;
+}
+.userName{
+    font-size: 1rem;
+    font-family: var(--header-font);
+}
+.userGmail{
+    font-size: 1rem;
+    color: var(--light-grey);
+}
+.userAvatar{
+    border-radius: 10rem;
+}
+.userAvatar img{
+    height: 100%;
+    width: 100%;
+}
+
+
+.sideMenu{
+    grid-area: sidebar;
+    /* border: 2px solid ; */
+    display: flex;
+    flex-direction: column;
+
+}
+.sideMenu a{
+  text-decoration: none;
+  color: var(--light-grey);
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  margin: 1rem;
+  font-family: var(--header-font);
+  border-radius: 1rem;
+}
+.sideMenu a i{
+   font-size: 1.3rem;
+   margin: 0 .5rem;
+
+}
+.sideMenu a:hover{
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    background-color: var(--box-color);
+    transition: all .5s;
+    color: var(--logo-color);
+}
+.todoListContainer{
+    grid-area: content;
+    /* border: 2px solid red; */
+    background-color: var(--off-white);
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+}
+.todoListHeader{
+    padding: 1rem 0;
+}
+.todoListHeader span{
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: var(--header-font);
+}
+.currentDateDisplay{
+    color: var(--light-grey);
+}
+#todoListSection{
+    background-color: transparent;
+    padding: 1rem;
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+/* To Do List Ssection */
+
+.todoList{
+    /* border: 1px solid; */
+    padding: 1rem;
+    border-radius: 1rem;
+    display: grid;
+    min-width: 30%;
+    margin: 1rem 1rem;
+    grid-template-rows: 1fr 0.5fr;
+    background-color: var(--box-color);
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.todoInfo{
+    /* border: 2px solid; */
+    display: grid;
+    grid-template-columns: .2fr 4fr .2fr;
+    place-items: center;
+}
+.todoTask{
+   font-size: 2rem;
+   width: 100%;
+   padding: 1rem 0;
+}
+.todoRemovedBtn {
+    height: 3rem;
+    width: 3rem;
+    font-size: 2.5rem;
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--light-grey);
+    transition: all .5s;
+}
+.todoRemovedBtn:hover{
+    color: var(--font-color);
+    transform: scale(1.2);
+}
+.todoDescription{
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: space-around;
+    place-items: center;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: var(--header-font);
+}
+.todoDescription span{
+    font-family: var(--header-font);
+}
+.todoProgress {
+    color: orange;
+}
+.todoCompleted{
+    color: green;
+}
+.todoDate, .todoDate i{
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255, 0, 0, 0.66);
+}
+
+@media  screen and (max-width: 768px) {
+    .sideMenu{
+        display: none;
+
+    }
+    .containerOfTodoPage{
+        display: block;
+        
+    }
+}
+@media  screen and (max-width: 500px) {
+    *{
+        font-size: 50%;
+    }
+    .headerOfTodoPage{
+        padding: 2rem 0;
+        grid-template-columns: 1fr 2fr;
+        
+    }
+    .searchSection {
+        display: flex;
+        padding-right: 2rem;
+        justify-content: flex-end;
+    }
+    .userSection{
+        display: none;
+    }
+    #todoListSection{
+        display: flex;
+        justify-content: center;
+        
+    }
+    .todoList {
+        /* border: 1px solid; */
+        min-width: 80%;
+    }
+
+    
+}
+@media  screen and (max-width: 320px) {
+    .todoList {
+        /* border: 1px solid; */
+        min-width: 90%;
+    }
+}
