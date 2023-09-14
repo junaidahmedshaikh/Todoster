@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
   box-sizing: border-box;
   font-size: 62.5%;
 }
@@ -19,8 +19,9 @@
 }
 
 .containerOfTodoPage{
+    
     background-color: var(--bg-color);
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     display: grid;
     grid-template-columns: .7fr 3fr;
@@ -35,6 +36,7 @@
     padding: 2rem;
     height: 8rem;
     background-color: var(--bg-color);
+    /* overflow: hidden; */
 }
 /* Logo Section */
 .logoSection{
@@ -95,10 +97,12 @@ padding: 0 1rem;
 }
 .userAvatar{
     border-radius: 10rem;
+    overflow: hidden;
 }
 .userAvatar img{
     height: 100%;
     width: 100%;
+
 }
 
 
@@ -157,7 +161,9 @@ padding: 0 1rem;
     grid-template-columns: repeat(2, 1fr); */
     display: flex;
     flex-wrap: wrap;
+    
 }
+
 
 
 
@@ -241,8 +247,14 @@ padding: 0 1rem;
     }
     .headerOfTodoPage{
         padding: 2rem 0;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: .5fr 2fr;
         
+    }
+    .logoSection{
+        font-size: 1.5rem;
+        display: block;
+        margin: auto;
+        font-weight: 600;
     }
     .searchSection {
         display: flex;
@@ -252,10 +264,12 @@ padding: 0 1rem;
     .userSection{
         display: none;
     }
+    .userInput{
+        width: 70%;
+    }
     #todoListSection{
         display: flex;
-        justify-content: center;
-        
+        justify-content: space-evenly;
     }
     .todoList {
         /* border: 1px solid; */
